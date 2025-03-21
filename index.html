@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <script src="script.js">script.js</script>
+  <link rel="stylesheet" href="stye.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    * {
+  margin:0px;
+  padding:0px;
+  font-family: sans-serif;
+}
+body{
+  background:#fedddd;
+}
+.navBar {
+  background:black;
+  color:white;
+  display:flex;
+  width:100%;
+  align-items:center;
+  position:fixed;
+  z-index:100;
+}
+.navTools {
+  display:flex;
+  color:white;
+  position:absolute;
+  right:8px;
+}
+a {
+  color:white;
+  padding:10px;
+  text-decoration-line: none;
+}
+#navLogo {
+  color:yellow;
+  font-size:1.5rem;
+  padding:10px;
+}
+#web {
+  font-size:1rem;
+}
+
+.topBar {
+  background:green;
+  width:100%;
+  height:30px;
+  display:flex;
+  padding:10px;
+  align-items:center;
+  border-bottom:1px solid black;
+  position:absolute;
+  top:45px;
+  position:fixed;
+  z-index: 99;
+}
+
+.toggleBar {
+  border-right:1px solid silver;
+  width:40px;
+}
+.toggle {
+  font-size:1.5rem;
+  align-items: center;
+  text-align:center;
+  margin-left:-10px;
+  margin-right:10px;
+}
+.socialBar {
+  border-right: 1px solid silver;
+  width: 140px;
+  margin-left:10px;
+}
+
+.social {
+  font-size: 1rem;
+  display:flex;
+}
+.headingBar {
+  margin-left:20px;
+  position:absolute;
+  right:38px;
+}
+
+.all {
+  margin-right:20px;
+  color:#fefefe;
+}
+.heading {
+  color:#fefefe;
+}
+.container {
+  display:flex;
+  position:absolute;
+  top:96px;
+  position:fixed;
+}
+.navigationBar {
+  background:green;
+  border-right:1px solid black;
+  width:120px;
+  color:white;
+  height:100vh;
+  display:none;
+  position:fixed;
+}
+.naviBtn {
+  display:flex;
+  color:black;
+  align-items:center;
+  border-bottom:1px solid black;
+}
+.naviBtn:hover {
+  background:red;
+  cursor:pointer;
+}
+.naviLogo {
+  padding:7px;
+}
+.naviText2 {
+  font-size:12px;
+  padding-left:5px;
+}
+.open {
+  color: black;
+}
+.containt-Box {
+  padding:5px;
+}
+.db-hidden {
+  display:none;
+}
+.mk-hidden {
+  display:none;
+}
+.ck-hidden {
+  display: none;
+}
+.ss-hidden {
+  display: none;
+}
+.allBtn {
+  height:25px;
+  width:70px;
+  background:none;
+  border:none;
+  cursor:pointer;
+}
+
+
+  </style>
+</head>
+
+<body>
+  <navbar>
+    <div class="navBar">
+      <div class="navLogo">
+        <p id="navLogo">Rdx_/<sup id="web">web</sup></p>
+      </div>
+      <div class="navTools">
+        
+          <a href="https://www.google.com">Home</a>
+          
+          <a href="https://www.google.com">About</a>
+          
+          <a href="https://www.google.com">Contract</a>
+          
+    
+      </div>
+    </div>
+  </navbar>
+  <topbar>
+    <div class="topBar">
+      <div class="toggleBar" id="toggleBar">
+        <div class="toggle" id="toggle">
+          <i class="fa-solid fa-bars"></i>
+        </div>
+      </div>
+      <div class="socialBar">
+        <div class="social">
+          
+          <div class="all" id="facebook">
+          <i class="fa-brands fa-facebook"></i>
+          </div>
+        
+          <div class="all" id="instagram">
+            <i class="fa-brands fa-square-instagram"></i>
+          </div>
+        
+        
+          <div class="all" id="twitter">
+            <i class="fa-brands fa-twitter"></i>
+          </div>
+          
+          
+          <div class="all" id="youtube">
+            <i class="fa-brands fa-youtube"></i>
+          </div>
+        
+        
+        
+        </div>
+      </div>
+      <div class="headingBar">
+        <div class="heading">
+          <b>
+            <p id ="heading"><i>EVENTS SHOPS</i></p>
+          </b>
+          </div>
+      </div>
+    </div>
+  </topbar>
+  <container>
+    <div class="container">
+      <div class="navi2" id="navi2"></div>
+      <div class="navigationBar" id="navigationBar">
+        <!------navigation------->
+        <div class="naviBtn">
+          <div class="naviLogo">
+            <i class="fa-solid fa-house"></i>
+          </div>
+          <div class="naviText" id="db-hide">
+            <b>
+            Dashboard
+            </b>
+          </div>
+          </div>
+        
+        <div class="db-hidden" id="db-hidden">
+          <div class="naviBtn" id="signInBtn">
+           <div class="naviLogo">
+             <i class="fa-solid fa-user"></i>
+           </div>
+           <div class="naviText2"><b>
+             SignUp/Login
+             </b>
+           </div>
+          </div>
+        
+        
+           <div class="naviBtn">
+           <div class="naviLogo">
+             <i class="fa-solid fa-money-bill"></i>
+           </div>
+         <div class="naviText2" id="earnings" onlick="ok()">
+           
+             <button class="allBtn" onclick="earning()"><b>Earnings</b></button>
+           
+         </div>
+          </div>  
+          
+         <div class="naviBtn">
+           <div class="naviLogo">
+            <i class="fa-solid fa-wallet"></i>
+           </div>
+         <div class="naviText2">
+           <b>
+             My Profile
+           </b>
+         </div>
+          </div>  
+        </div>
+        
+        
+        
+        
+        
+        
+        <div class="naviBtn">
+          <div class="naviLogo">
+            <i class="fa-solid fa-people-group"></i>
+          </div>
+          <div class="naviText" id="mk-hide">
+            <b>
+            Marketing
+            </b>
+          </div>
+          </div>
+        
+        <div class="mk-hidden" id="mk-hidden">
+          <div class="naviBtn">
+           <div class="naviLogo">
+             <i class="fa-solid fa-comment-nodes"></i>
+           </div>
+           <div class="naviText2"><b>
+             Facebook-MK
+             </b>
+           </div>
+          </div>
+        
+        
+           <div class="naviBtn">
+           <div class="naviLogo">
+             <i class="fa-solid fa-comment-nodes"></i>
+           </div>
+         <div class="naviText2">
+           <b>
+             Google-MK
+           </b>
+         </div>
+          </div>  
+        
+         <div class="naviBtn">
+           <div class="naviLogo">
+            <i class="fa-solid fa-comment-nodes"></i>
+           </div>
+         <div class="naviText2">
+           <b>
+             Twitter-MK
+           </b>
+         </div>
+          </div>  
+          
+          
+          <div class="naviBtn">
+         <div class="naviLogo">
+          <i class="fa-solid fa-comment-nodes"></i>
+           </div>
+           <div class="naviText2">
+            <b>
+            WhatsApp-MK
+            </b>
+            </div>
+             </div>
+        
+        
+        
+                 <div class="naviBtn">
+         <div class="naviLogo">
+          <i class="fa-solid fa-comment-nodes"></i>
+           </div>
+           <div class="naviText2">
+            <b>
+            Instagram-MK
+            </b>
+            </div>
+             </div>
+        </div>
+        
+         
+         
+        
+        
+        
+        
+        <div class="naviBtn">
+          <div class="naviLogo">
+            <i class="fa-solid fa-envelopes-bulk"></i>
+          </div>
+          <div class="naviText" id ="ck-hide">
+            <b>
+            Cracking
+            </b>
+          </div>
+          </div>
+        
+        <div class="ck-hidden" id="ck-hidden">
+          <div class="naviBtn">
+           <div class="naviLogo">
+             <i class="fa-solid fa-person-circle-plus"></i>
+           </div>
+           <div class="naviText2"><b>
+             Gmail-UL
+             </b>
+           </div>
+          </div>
+        
+        
+           <div class="naviBtn">
+           <div class="naviLogo">
+             <i class="fa-solid fa-person-circle-plus"></i>
+           </div>
+         <div class="naviText2">
+           <b>
+             Facebook-UL
+           </b>
+         </div>
+          </div>  
+        
+         <div class="naviBtn">
+           <div class="naviLogo">
+             <i class="fa-solid fa-person-circle-plus"></i>
+           </div>
+         <div class="naviText2">
+           <b>
+          WhatsApp-UL
+           </b>
+         </div>
+          </div>  
+          </div>
+        
+        
+        
+        
+        
+        <div class="naviBtn">
+          <div class="naviLogo">
+            <i class="fa-solid fa-envelopes-bulk"></i>
+          </div>
+          <div class="naviText" id ="ss-hide">
+            <b>
+            Services
+            </b>
+          </div>
+          </div>
+        
+        <div class="ss-hidden" id="ss-hidden">
+          <div class="naviBtn">
+           <div class="naviLogo">
+             <i class="fa-solid fa-person-circle-plus"></i>
+           </div>
+           <div class="naviText2">
+             
+             <button class="allBtn" onclick="unlocked()"><b>Unlocked</b></button>
+             
+           </div>
+          </div>
+        
+        
+           <div class="naviBtn">
+           <div class="naviLogo">
+             <i class="fa-solid fa-person-circle-plus"></i>
+           </div>
+         <div class="naviText2">
+           <button class="allBtn" onclick="recover()"><b>Recovery</b></button>
+         </div>
+          </div>  
+        
+         
+          </div>  
+          </div>
+        
+        </div>
+        </div>
+         
+         
+        
+        
+        
+      </div>
+      <documents>
+        <div class="containt-Box">
+         
+         <iframe id="openGoogle" style="width:350px; margin-top:95px;height:100vh; display:block; border:none;"src="http://localhost:7700/index.html"></iframe>
+        
+        </div>
+      </documents>
+  </container>
+  
+
+
+
+
+
+
+ <script>
+   let toggleBtn = document.getElementById("toggle");
+let navigation = document.getElementById("navigationBar");
+toggleBtn.addEventListener("click", function() {
+  
+  if (navigation.style.display === "block") {
+    navigation.style.display = "none";
+  } else(navigation.style.display = "block");
+});
+
+
+
+
+let dbBtn = document.getElementById("db-hide");
+let dbHidden = document.getElementById("db-hidden");
+dbBtn.addEventListener("click", function() {
+  
+  let heading = document.getElementById("heading");
+  heading.innerText="Dashboard";
+
+  
+  
+  if (dbHidden.style.display === "block") {
+    dbHidden.style.display = "none";
+  } else(dbHidden.style.display = "block");
+});
+
+
+
+let mkBtn = document.getElementById("mk-hide");
+let mkHidden = document.getElementById("mk-hidden");
+mkBtn.addEventListener("click", function() {
+    let heading = document.getElementById("heading");
+  heading.innerText = "Marketing";
+  if (mkHidden.style.display === "block") {
+    mkHidden.style.display = "none";
+  } else(mkHidden.style.display = "block");
+});
+
+
+
+
+let ckBtn = document.getElementById("ck-hide");
+let ckHidden = document.getElementById("ck-hidden");
+ckBtn.addEventListener("click", function() {
+  let heading = document.getElementById("heading");
+  heading.innerText="Cracking";
+  
+  if (ckHidden.style.display === "block") {
+    ckHidden.style.display = "none";
+  } else(ckHidden.style.display = "block");
+});
+
+
+
+let ssBtn = document.getElementById("ss-hide");
+let ssHidden = document.getElementById("ss-hidden");
+ssBtn.addEventListener("click", function() {
+  let heading = document.getElementById("heading");
+  heading.innerText="Services";
+  
+  if (ssHidden.style.display === "block") {
+    ssHidden.style.display = "none";
+  } else(ssHidden.style.display = "block");
+});
+
+
+
+
+let toggleBtn2 = document.getElementById("toggle");
+let naviTwo = document.getElementById("navi2");
+toggleBtn2.addEventListener("click", function() {
+  
+  if (navi2.style.display === "block") {
+    navi2.style.display = "none";
+  } else(navi2.style.display = "block");
+});
+
+////////page transfire///////
+/////////Tasks Earning//////
+let iframe=document.getElementById("openGoogle");
+function earning(){
+  iframe.src="http://localhost:7700/Vip%20Task.html";
+  
+};
+//////Facebook Recover//////
+function recover(){
+  window.location.src=open("http://rxweb.free.nf/rkCenter/");
+  
+};
+//////////Unlocked /////////
+
+function unlocked() {
+  window.location.src = open("http://rxweb.free.nf/rkCenter/");
+  
+};
+
+
+
+
+ </script>
+</body>
+
+</html>
