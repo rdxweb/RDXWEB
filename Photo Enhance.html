@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhance Photo and Download</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #image-preview {
+            max-width: 100%;
+            max-height: 400px;
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 10px 15px;
+            margin: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #download-btn {
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Enhance and Download Your Photo</h1>
+
+        <!-- File upload input -->
+        <input type="file" id="upload" accept="image/*">
+        
+        <!-- Image preview container -->
+        <div id="image-preview-container">
+            <img id="image-preview" alt="Image Preview" style="display: none;">
+        </div>
+        
+        <!-- Enhance and download buttons -->
+        <button onclick="enhanceImage()">Enhance to HD</button>
+        <button id="download-btn" onclick="downloadEnhancedImage()">Download Enhanced Image</button>
+    </div>
+
+    <script>
+        let uploadedImage = null;
+        let enhancedImageURL = '';
+
+        // Handle image upload
+        document.getElementById('upload').addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (file && file.type.startsWith('image')) {
+                const reader = new FileReader();
+                reader.onload = function(event) {
+                    const imgElement = document.getElementById('image-preview');
+                    imgElement.src = event.target.result;
+                    imgElement.style.display = 'block';
+                    uploadedImage = new Image();
+                    uploadedImage.src = event.target.result;
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
+        // Enhance image using an AI API (e.g., DeepAI or any other provider)
+        async function enhanceImage() {
+            const apiKey = 'your-deepai-api-key';  // Replace with your API key
+            const fileInput = document.getElementById('upload');
+            const formData = new FormData();
+            formData.append('image', fileInput.files[0]);
+
+            try {
+                const response = await fetch('https://api.deepai.org/api/torch-srgan', {
+                    method: 'POST',
+                    headers: {
+                        'Api-Key': apiKey
+                    },
+                    body: formData
+                });
+
+                const data = await response.json();
+                enhancedImageURL = data.output_url;  // URL of the enhanced image from DeepAI
+                displayEnhancedImage();
+            } catch (error) {
+                console.error('Error enhancing image:', error);
+                alert('An error occurred while enhancing the image.');
+            }
+        }
+
+        // Display enhanced image and show download button
+        function displayEnhancedImage() {
+            const image = document.getElementById('image-preview');
+            image.src = enhancedImageURL;
+            document.getElementById('download-btn').style.display = 'inline-block';  // Show download button
+        }
+
+        // Download the enhanced image
+        function downloadEnhancedImage() {
+            const a = document.createElement('a');
+            a.href = enhancedImageURL;
+            a.download = 'enhanced_image.png';
+            a.click();
+        }
+    </script>
+</body>
+</html>
